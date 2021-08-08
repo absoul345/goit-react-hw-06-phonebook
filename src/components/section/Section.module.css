@@ -1,0 +1,12 @@
+.section {
+  text-align: start;
+}
+
+.title__AddContacts {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.title__List {
+  font-size: 30px;
+}
