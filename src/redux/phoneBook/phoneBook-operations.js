@@ -11,7 +11,8 @@ import {
   fetchContactError,
 } from './phoneBook-actions';
 
-axios.defaults.baseURL = 'http://localhost:4040/';
+axios.defaults.baseURL =
+  'https://hw-07-1c0c4-default-rtdb.europe-west1.firebasedatabase.app/';
 
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactRequest());
