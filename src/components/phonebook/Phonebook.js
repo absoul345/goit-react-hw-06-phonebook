@@ -5,7 +5,7 @@ import AddContacts from '../addContacts/AddContacts';
 import ContactsList from '../contactsList/ContactsList';
 import { phoneBookOperations } from '../../redux/phoneBook';
 import { connect } from 'react-redux';
-import { getLoading } from '../../redux/phoneBook/contacts-selectors';
+import { getLoading, getError } from '../../redux/phoneBook/contacts-selectors';
 
 export class Phonebook extends Component {
   state = {};
@@ -22,6 +22,7 @@ export class Phonebook extends Component {
         </SectionAddContacts>
         <SectionList title="Contacts">
           <ContactsList />
+          {this.props.error && <h1>Error</h1>}
           {this.props.isLoadingContacts && <h1>Loading...</h1>}
         </SectionList>
       </>
@@ -31,6 +32,7 @@ export class Phonebook extends Component {
 
 const mapStateToProps = state => ({
   isLoadingContacts: getLoading(state),
+  error: getError(state),
 });
 
 const mapDispatchToProps = dispatch => ({
